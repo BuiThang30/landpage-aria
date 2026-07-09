@@ -1,11 +1,11 @@
 import styles from "./page.module.css";
-import Navbar from "./components/Nav/nav";
+import Navbar from "@/components/Nav/nav";
 import Image from "next/image";
 import { dfvnGldDisplay, beVietnamPro } from "./fonts"; 
-import Slider from "./components/Slider/slider";
-import Donation from "./components/Donation/donation";
-import Footer from "./components/Footer/Footer";
-import Registration from "./components/Registration/registration";
+import Slider from "@/components/Slider/slider";
+import Donation from "@/components/Donation/donation";
+import Footer from "@/components/Footer/Footer";
+import Registration from "@/components/Registration/registration"; 
 
 export default function Home() {
   return (
