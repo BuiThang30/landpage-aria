@@ -1,0 +1,122 @@
+.footer {
+  background-color: var(--secondary-magenta, #ed335d);
+  padding: 40px 80px 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.contentWrapper {
+  max-width: 1179px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-body), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFFEC4;
+  margin-bottom: 25px;
+}
+
+.contactGrid {
+  display: flex;
+  justify-content: space-between; /* Dàn đều 3 cột ra 2 bên */
+  gap: 20px;
+}
+
+.contactItem {
+  font-family: var(--font-body), sans-serif;
+  font-size: 18px;
+  color: #FFFEC4;
+  line-height: 1.6;
+}
+
+.contactItem p {
+  margin: 0;
+}
+
+.contactName {
+  font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN CHO FOOTER
+========================================= */
+
+/* ===== Màn hình nhỏ hơn 1200px ===== */
+@media (max-width: 1439px) {
+  .footer {
+    padding: 40px 60px 50px;
+  }
+}
+
+/* ===== Màn hình nhỏ hơn 1024px (Tablet ngang) ===== */
+@media (max-width: 1199px) {
+  .footer {
+    padding: 30px 40px 40px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .contactItem {
+    font-size: 16px;
+  }
+}
+
+/* ===== Màn hình nhỏ hơn 768px (Tablet dọc & Điện thoại lớn) ===== */
+@media (max-width: 1023px) {
+  .footer {
+    padding: 30px 30px 40px;
+  }
+
+  .title {
+    font-size: 22px;
+    text-align: center; /* Căn giữa tiêu đề cho cân đối trên mobile */
+  }
+
+  /* Quan trọng: Chuyển lưới từ hàng ngang sang cột dọc */
+  .contactGrid {
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; /* Căn giữa nội dung các mục liên hệ */
+    gap: 30px; /* Tăng khoảng cách giữa các khối khi xếp dọc */
+  }
+}
+
+/* ===== Màn hình nhỏ hơn 480px (Điện thoại di động phổ thông) ===== */
+@media (max-width: 767px) {
+  .footer {
+    padding: 25px 15px 30px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .contactGrid {
+    gap: 20px;
+  }
+
+  .contactItem {
+    font-size: 15px;
+  }
+}
+
+/* ===== Màn hình nhỏ hơn 360px (Điện thoại nhỏ) ===== */
+@media (max-width: 479px) {
+  .footer {
+    padding: 20px 10px 25px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .contactItem {
+    font-size: 14px;
+  }
+}

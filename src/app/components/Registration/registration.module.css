@@ -1,0 +1,396 @@
+.registration {
+  position: relative;
+  padding: 35px 80px 90px;
+  background: #FFFFEF;
+  padding-top: 60px;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
+
+.registration::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-magenta, #ed335d);
+  z-index: 10;
+}
+
+.mountain1 {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1440px;
+  max-width: none;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1179px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  color: var(--secondary-magenta, #ed335d);
+  font-family: var(--font-display), serif;
+  font-size: 67.862px;
+  font-style: normal;
+  font-weight: 900;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+
+/* KHỐI FORM */
+.regContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  align-items: stretch;
+}
+
+.regInfo {
+  box-sizing: border-box;
+  width: 39%;
+  background-color: #FFFFD5;
+  border: 2px solid var(--secondary-magenta, #ed335d);
+  border-radius: 20px;
+  padding: 33px 0px 33px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ===== FORM DÙNG GRID: cột label tự rộng theo chữ dài nhất, cột input ăn hết phần còn lại ===== */
+.regForm {
+  box-sizing: border-box;
+  width: 61%;
+  background-color: #FFF3E1;
+  border: 2px solid var(--secondary-magenta, #ed335d);
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 15px;
+  row-gap: 18px;
+  align-items: center;
+}
+
+.regText {
+  grid-column: 1 / -1;
+  color: var(--secondary-magenta, #ed335d);
+  font-family: var(--font-body), sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 131%;
+  margin: 0;
+}
+
+.regBold {
+  font-weight: 700;
+}
+
+.formRow {
+  display: contents;
+}
+
+.formLabel {
+  box-sizing: border-box;
+  color: #ED335D;
+  text-align: center;
+  font-family: var(--font-body), sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  border: 2px solid #ED335D;
+  border-radius: 30px;
+  padding: 8px 15px;
+  white-space: nowrap;
+  width: 240px !important;
+  justify-self: start;
+}
+
+.formInput {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  background: transparent;
+  border: 2px solid #ED335D;
+  border-radius: 30px;
+  color: #ED335D;
+  font-size: 20px;
+  padding: 0 20px;
+  outline: none;
+  font-family: var(--font-body), sans-serif;
+}
+
+.formInput:focus {
+  background-color: rgba(255, 254, 196, 0.1);
+}
+
+.formInput::-webkit-outer-spin-button,
+.formInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.formInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+.inputWithHint {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.inputWithHint .formInput {
+  padding-right: 215px;
+}
+
+.hintText {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ED335D;
+  font-size: 14px;
+  font-family: var(--font-body), sans-serif;
+  font-style: italic;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.submitBtn {
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background-color: #faece9;
+  color: var(--secondary-magenta, #ed335d);
+  border: 2px solid var(--secondary-magenta, #ed335d);
+  border-radius: 30px;
+  font-family: var(--font-display), serif;
+  font-size: 32px;
+  padding: 12px 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: var(--secondary-magenta, #ed335d);
+  color: #FFFEC4;
+}
+
+.statusMessage {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  font-family: var(--font-body), sans-serif;
+  color: var(--secondary-magenta, #ed335d);
+  font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN CHO REGISTRATION FORM
+========================================= */
+
+/* ===== ≤1439px ===== */
+@media (max-width: 1439px) {
+  .registration {
+    padding: 30px 60px 70px;
+  }
+
+  .mountain1 {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 56px;
+  }
+
+  .regInfo {
+    padding: 25px 0px 25px 20px;
+  }
+
+  .regForm {
+    padding: 30px 25px;
+  }
+}
+
+/* ===== ≤1199px (Tablet ngang) ===== */
+@media (max-width: 1199px) {
+  .registration {
+    padding: 30px 40px 60px;
+  }
+
+  .title {
+    font-size: 46px;
+    margin-bottom: 25px;
+  }
+
+  .formLabel {
+    font-size: 18px;
+  }
+
+  .regText {
+    font-size: 18px;
+  }
+
+  .inputWithHint .formInput {
+    padding-right: 150px;
+  }
+
+  .hintText {
+    font-size: 12px;
+  }
+
+  .submitBtn {
+    font-size: 28px;
+  }
+}
+
+/* ===== ≤1023px (Tablet dọc & Điện thoại lớn) ===== */
+@media (max-width: 1023px) {
+  .registration {
+    padding: 25px 30px 50px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .regContainer {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .regInfo,
+  .regForm {
+    width: 100%;
+  }
+
+  .regInfo {
+    padding: 25px;
+  }
+
+  .formLabel {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .formInput {
+    font-size: 16px;
+  }
+
+  .submitBtn {
+    font-size: 24px;
+  }
+}
+
+/* ===== ≤767px (Điện thoại phổ thông): chuyển từ grid sang xếp dọc ===== */
+@media (max-width: 767px) {
+  .registration {
+    padding: 20px 15px 40px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .regForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 14px;
+  }
+
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .formLabel {
+    width: 100% !important; /* thêm !important để thắng rule base 240px !important */
+    text-align: center;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+
+  .formInput {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  .inputWithHint {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .inputWithHint .formInput {
+    padding-right: 15px;
+    width: 100%;
+  }
+
+  .hintText {
+    position: static;
+    transform: none;
+    white-space: normal;
+    text-align: left;
+    margin: 0;
+    padding-left: 4px;
+    display: block;
+  }
+
+  .regText {
+    font-size: 16px;
+  }
+
+  .submitBtn {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+}
+
+/* ===== ≤479px (Điện thoại nhỏ) ===== */
+@media (max-width: 479px) {
+  .registration {
+    padding: 15px 10px 30px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .regText {
+    font-size: 15px;
+  }
+
+  .formLabel {
+    font-size: 13px;
+    padding: 5px 14px;
+  }
+
+  .formInput {
+    font-size: 13px;
+    height: 38px;
+  }
+}

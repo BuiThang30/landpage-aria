@@ -1,0 +1,188 @@
+/* =========================================
+   GIAO DIỆN MẶC ĐỊNH (DESKTOP)
+========================================= */
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1179px;
+  margin: 0 auto 60px;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.cardsWrapper {
+  position: relative;
+  z-index: 3;
+  flex: 1; /* Để Wrapper chiếm không gian giữa 2 nút */
+  min-width: 0; /* QUAN TRỌNG: cho phép flex item co nhỏ hơn nội dung bên trong */
+  overflow: hidden;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* giảm nhẹ so với 50px để 3 ảnh vừa khít hơn */
+}
+
+.cardImage {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 357px;
+  height: auto;
+  aspect-ratio: 357 / 351; /* giữ tỉ lệ ảnh gốc, tránh méo hình */
+  object-fit: cover;
+  background: var(--secondary-magenta, #ed335d);
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* =========================================
+   STYLE CHO NÚT MŨI TÊN
+========================================= */
+.navButton {
+  background-color: var(--secondary-magenta, #ed335d);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background-color: var(--primary-red, #e93d56);
+  transform: scale(1.1);
+}
+
+.prevButton {
+  margin-right: 20px;
+}
+
+.nextButton {
+  margin-left: 20px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Bao gồm 5 mốc màn hình)
+========================================= */
+
+/* ===== 1. Màn hình nhỏ hơn 1200px ===== */
+@media (max-width: 1439px) {
+  .cardImage {
+    max-width: 300px;
+  }
+  .cards {
+    gap: 24px;
+  }
+}
+
+/* ===== 2. Màn hình nhỏ hơn 1024px (Tablet ngang) ===== */
+@media (max-width: 1199px) {
+  .cardImage {
+    max-width: 240px;
+  }
+  .cards {
+    gap: 16px;
+  }
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+/* ===== 3. Màn hình nhỏ hơn 768px (Tablet dọc & Điện thoại lớn) ===== */
+@media (max-width: 1023px) {
+  .sliderContainer {
+    margin-bottom: 40px;
+  }
+
+  .cardImage:nth-child(3) {
+    display: none;
+  }
+
+  .cards {
+    gap: 15px;
+  }
+
+  .cardImage {
+    flex: 1 1 0;
+    max-width: none;
+    width: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .prevButton { margin-right: 15px; }
+  .nextButton { margin-left: 15px; }
+}
+
+/* ===== 4. Màn hình nhỏ hơn 480px ===== */
+@media (max-width: 767px) {
+  .sliderContainer {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .cardImage:nth-child(2) {
+    display: none;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+
+  .cardImage {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    background-color: rgba(237, 51, 93, 0.85);
+  }
+
+  .navButton:hover {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .prevButton { left: 10px; margin: 0; }
+  .nextButton { right: 10px; margin: 0; }
+}
+
+/* ===== 5. Màn hình nhỏ hơn 360px ===== */
+@media (max-width: 479px) {
+  .sliderContainer {
+    margin-bottom: 20px;
+  }
+
+  .cardImage {
+    max-width: 260px;
+  }
+
+  .navButton {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .prevButton { left: 5px; }
+  .nextButton { right: 5px; }
+}
