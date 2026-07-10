@@ -2,6 +2,9 @@
    GIAO DIỆN MẶC ĐỊNH (DESKTOP)
 ========================================= */
 .sliderContainer {
+  --visible: 3; /* số ảnh hiển thị cùng lúc, JS sẽ đọc biến này */
+  --gap: 30px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,28 +18,29 @@
 .cardsWrapper {
   position: relative;
   z-index: 3;
-  flex: 1; /* Để Wrapper chiếm không gian giữa 2 nút */
-  min-width: 0; /* QUAN TRỌNG: cho phép flex item co nhỏ hơn nội dung bên trong */
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
 }
 
 .cards {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px; /* giảm nhẹ so với 50px để 3 ảnh vừa khít hơn */
+  will-change: transform;
+}
+
+.cardItem {
+  flex: 0 0 calc(100% / var(--visible));
+  box-sizing: border-box;
+  padding: 0 calc(var(--gap) / 2);
 }
 
 .cardImage {
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 357px;
+  width: 100%;
   height: auto;
-  aspect-ratio: 357 / 351; /* giữ tỉ lệ ảnh gốc, tránh méo hình */
+  aspect-ratio: 357 / 351;
   object-fit: cover;
   background: var(--secondary-magenta, #ed335d);
   display: block;
-  transition: opacity 0.5s ease-in-out;
 }
 
 /* =========================================
@@ -73,26 +77,20 @@
 }
 
 /* =========================================
-   RESPONSIVE DESIGN (Bao gồm 5 mốc màn hình)
+   RESPONSIVE DESIGN
 ========================================= */
 
-/* ===== 1. Màn hình nhỏ hơn 1200px ===== */
+/* ===== 1. Màn hình nhỏ hơn 1440px ===== */
 @media (max-width: 1439px) {
-  .cardImage {
-    max-width: 300px;
-  }
-  .cards {
-    gap: 24px;
+  .sliderContainer {
+    --gap: 24px;
   }
 }
 
-/* ===== 2. Màn hình nhỏ hơn 1024px (Tablet ngang) ===== */
+/* ===== 2. Màn hình nhỏ hơn 1200px (Tablet ngang) ===== */
 @media (max-width: 1199px) {
-  .cardImage {
-    max-width: 240px;
-  }
-  .cards {
-    gap: 16px;
+  .sliderContainer {
+    --gap: 16px;
   }
   .navButton {
     width: 45px;
@@ -101,24 +99,15 @@
   }
 }
 
-/* ===== 3. Màn hình nhỏ hơn 768px (Tablet dọc & Điện thoại lớn) ===== */
+/* ===== 3. Màn hình nhỏ hơn 1024px (Tablet dọc & Điện thoại lớn) ===== */
 @media (max-width: 1023px) {
   .sliderContainer {
+    --visible: 2;
+    --gap: 15px;
     margin-bottom: 40px;
   }
 
-  .cardImage:nth-child(3) {
-    display: none;
-  }
-
-  .cards {
-    gap: 15px;
-  }
-
   .cardImage {
-    flex: 1 1 0;
-    max-width: none;
-    width: auto;
     aspect-ratio: 1 / 1;
   }
 
@@ -126,27 +115,23 @@
   .nextButton { margin-left: 15px; }
 }
 
-/* ===== 4. Màn hình nhỏ hơn 480px ===== */
+/* ===== 4. Màn hình nhỏ hơn 768px ===== */
 @media (max-width: 767px) {
   .sliderContainer {
+    --visible: 1;
+    --gap: 0px;
     padding: 0;
     margin-bottom: 30px;
   }
 
-  .cardImage:nth-child(2) {
-    display: none;
-  }
-
-  .cards {
-    justify-content: center;
-  }
-
-  .cardImage {
-    flex: none;
-    width: 100%;
-    max-width: 320px;
+  .cardsWrapper {
+    max-width: 260px;
     margin: 0 auto;
-    aspect-ratio: 1 / 1;
+  }
+
+  .cardItem {
+    max-width: none;
+    margin: 0;
   }
 
   .navButton {
@@ -167,14 +152,10 @@
   .nextButton { right: 10px; margin: 0; }
 }
 
-/* ===== 5. Màn hình nhỏ hơn 360px ===== */
+/* ===== 5. Màn hình nhỏ hơn 480px ===== */
 @media (max-width: 479px) {
   .sliderContainer {
     margin-bottom: 20px;
-  }
-
-  .cardImage {
-    max-width: 260px;
   }
 
   .navButton {

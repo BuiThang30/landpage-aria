@@ -89,7 +89,7 @@
 /* ===== Màn hình nhỏ hơn 480px (Điện thoại di động phổ thông) ===== */
 @media (max-width: 767px) {
   .footer {
-    padding: 25px 15px 30px;
+    padding: 25px 22px 30px;
   }
 
   .title {
@@ -109,7 +109,7 @@
 /* ===== Màn hình nhỏ hơn 360px (Điện thoại nhỏ) ===== */
 @media (max-width: 479px) {
   .footer {
-    padding: 20px 10px 25px;
+    padding: 20px 18px 25px;
   }
 
   .title {

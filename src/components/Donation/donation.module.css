@@ -188,7 +188,7 @@
 /* ===== Màn hình nhỏ hơn 480px (Điện thoại di động phổ thông) ===== */
 @media (max-width: 767px) {
   .donationSection {
-    padding: 30px 15px 40px;
+    padding: 30px 22px 40px;
   }
 
   .title {
@@ -221,7 +221,7 @@
 /* ===== Màn hình nhỏ hơn 360px (Điện thoại nhỏ) ===== */
 @media (max-width: 479px) {
   .donationSection {
-    padding: 20px 10px 30px;
+    padding: 20px 18px 30px;
   }
 
   .title {

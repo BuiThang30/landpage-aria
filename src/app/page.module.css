@@ -262,7 +262,7 @@
 /* ===== ≤1023px (Tablet dọc & Điện thoại lớn) ===== */
 @media (max-width: 1023px) {
   .page {
-    padding-top: 60px;
+    padding-top: 65px;
   }
 
   .mountain {
@@ -321,7 +321,7 @@
 /* ===== ≤767px (Điện thoại phổ thông) ===== */
 @media (max-width: 767px) {
   .page {
-    padding-top: 50px;
+    padding-top: 60px;
   }
 
   .mountain {
@@ -331,7 +331,7 @@
   .about > div.top,
   .about > div.profile,
   .about > div.exhibition {
-    padding: 15px 15px 40px;
+    padding: 15px 22px 40px;
   }
 
   .about > div.exhibition {
@@ -380,7 +380,7 @@
 /* ===== ≤479px (Điện thoại nhỏ) ===== */
 @media (max-width: 479px) {
   .page {
-    padding-top: 44px;
+    padding-top: 60px;
   }
 
   .mountain {
@@ -390,7 +390,7 @@
   .about > div.top,
   .about > div.profile,
   .about > div.exhibition {
-    padding: 12px 10px 30px;
+    padding: 12px 18px 30px;
   }
 
   .about > div.exhibition {

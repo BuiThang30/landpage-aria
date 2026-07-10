@@ -302,7 +302,7 @@
 /* ===== ≤767px (Điện thoại phổ thông): chuyển từ grid sang xếp dọc ===== */
 @media (max-width: 767px) {
   .registration {
-    padding: 20px 15px 40px;
+    padding: 20px 22px 40px;
   }
 
   .title {
@@ -321,14 +321,15 @@
     flex-direction: column;
     gap: 6px;
     width: 100%;
+    align-items: flex-start;
   }
 
   .formLabel {
-    width: 100% !important; /* thêm !important để thắng rule base 240px !important */
+    width: fit-content !important;
     text-align: center;
     padding: 6px 16px;
     font-size: 14px;
-    border-radius: 20px;
+    border: none;
   }
 
   .formInput {
@@ -373,7 +374,7 @@
 /* ===== ≤479px (Điện thoại nhỏ) ===== */
 @media (max-width: 479px) {
   .registration {
-    padding: 15px 10px 30px;
+    padding: 15px 18px 30px;
   }
 
   .title {
