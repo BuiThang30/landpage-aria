@@ -45,7 +45,6 @@ export default function Registration() {
     } catch (error) {
       setStatus("Có lỗi xảy ra. Vui lòng thử lại sau!");
     } finally {
-      // Tự động ẩn thông báo sau 4 giây (cả trường hợp thành công lẫn lỗi)
       setTimeout(() => {
         setStatus("");
       }, 4000);
@@ -63,7 +62,7 @@ export default function Registration() {
       />
 
       <div className={styles.contentWrapper}>
-        <h2 className={styles.title}>ĐĂNG KÍ THAM DỰ MIỄN PHÍ</h2>
+        <h2 className={styles.title}>ĐĂNG KÝ THAM DỰ MIỄN PHÍ</h2>
 
         <div className={styles.regContainer}>
           <div className={styles.regInfo}>
