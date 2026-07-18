@@ -6,22 +6,20 @@ export default function Donation() {
   return (
     <div className={styles.donationSection}>
       <div className={styles.contentWrapper}>
-        <h2 className={styles.title}>QUYÊN GÓP TỰ NGUYỆN</h2>
-        
+        <h2 className={styles.title}>ĐỒNG HÀNH CÙNG ARIA PROJECT</h2>
+
         <p className={styles.description}>
-          Toàn bộ số tiền quyên góp sẽ được{" "}
-          {/* <a href="" target="_blank" rel="noopener noreferrer" className={styles.boldLink}> */}
-          <strong>Aria Project</strong>
-          {/* </a>{" "} */}
-          {" "}kết hợp với{" "}
-          <a href="https://www.facebook.com/IHope.Foundation" target="_blank" rel="noopener noreferrer" className={styles.boldLink}>
-            <strong>I-Hope Foundation</strong>
-          </a>{" "}
-          gửi cho tổ chức{" "}
+          Toàn bộ sự đồng hành dành cho{" "}
+          <strong>Aria Project</strong>{" "}
+          sẽ được công bố tại buổi hòa nhạc, sau đó được trao tới hai tổ chức đối tác là{" "}
           <a href="https://www.facebook.com/wvivietnam" target="_blank" rel="noopener noreferrer" className={styles.boldLink}>
-            World Vision International Vietnam
+            <strong>World Vision International Vietnam</strong>
           </a>{" "}
-          để hỗ trợ cải thiện chất lượng an sinh trẻ em và góp phần lan tỏa những giá trị tốt đẹp.
+          và{" "}
+          <a href="https://msdvietnam.org/" target="_blank" rel="noopener noreferrer" className={styles.boldLink}>
+            <strong>MSD Vietnam</strong>
+          </a>{" "}
+          để triển khai các dự án hỗ trợ trẻ em. Quá trình trao tặng sẽ được công khai trên trang Facebook của {" "}<strong>Aria Project</strong>{" "} sau khi chương trình kết thúc nhằm đảm bảo tính minh bạch và lan tỏa những giá trị tốt đẹp đến cộng đồng.
         </p>
         
         <div className={styles.shortLine}></div>
