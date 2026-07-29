@@ -85,8 +85,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Registration/>
       <Donation/>
+      <Registration/>
       <Footer/>
     </main>
   );

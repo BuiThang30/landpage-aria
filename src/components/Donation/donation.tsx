@@ -11,11 +11,7 @@ export default function Donation() {
         <p className={styles.description}>
           Toàn bộ sự đồng hành dành cho{" "}
           <strong>Aria Project</strong>{" "}
-          sẽ được công bố tại buổi hòa nhạc, sau đó được trao tới hai tổ chức đối tác là{" "}
-          <a href="https://www.facebook.com/wvivietnam" target="_blank" rel="noopener noreferrer" className={styles.boldLink}>
-            <strong>World Vision International Vietnam</strong>
-          </a>{" "}
-          và{" "}
+          sẽ được công bố tại buổi hòa nhạc, sau đó được trao tới tổ chức đối tác là{" "}
           <a href="https://msdvietnam.org/" target="_blank" rel="noopener noreferrer" className={styles.boldLink}>
             <strong>MSD Vietnam</strong>
           </a>{" "}
@@ -42,7 +38,6 @@ export default function Donation() {
             <strong>Nội dung chuyển khoản:</strong> Tên người quyên góp + số điện thoại
           </p>
         </div>
-        
       </div>
     </div>
   );
